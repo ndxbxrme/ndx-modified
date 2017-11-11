@@ -10,7 +10,7 @@
           args.obj[process.env.MODIFIED_USER_FIELD || ndx.settings.MODIFIED_USER_FIELD || 'modifiedBy'] = args.user[ndx.settings.AUTO_ID];
         }
       }
-      return cb();
+      return cb(true);
     });
     return ndx.database.on('preUpdate', function(args, cb) {
       if (args.obj) {
@@ -19,7 +19,7 @@
           args.obj[process.env.MODIFIED_USER_FIELD || ndx.settings.MODIFIED_USER_FIELD || 'modifiedBy'] = args.user[ndx.settings.AUTO_ID];
         }
       }
-      return cb();
+      return cb(true);
     });
   };
 
